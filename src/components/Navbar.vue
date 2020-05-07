@@ -182,10 +182,15 @@ a {
   text-decoration: none;
   font-size: 22px;
   font-weight: 700;
+  display: inline-block;
 }
 
-.router-link-active {
-  border-bottom: 4px solid white;
+.router-link-active:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: white;
 }
 
 @media (min-width: 850px) {
@@ -225,9 +230,20 @@ a {
   li {
     margin-bottom: 20px;
     transition: transform 0.2s ease;
+  }
 
-    &:hover {
-      transform: translateX(2px);
+  a {
+    &:after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 4px;
+      background: white;
+      transition: width 0.3s;
+    }
+
+    &:hover:after {
+      width: 100%;
     }
   }
 
