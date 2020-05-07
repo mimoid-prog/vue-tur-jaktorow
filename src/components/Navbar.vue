@@ -20,7 +20,7 @@
         <nav>
           <ul class="menu">
             <li>
-              <router-link to="/" class="test-active">Strona główna</router-link>
+              <router-link to="/" exact>Strona główna</router-link>
             </li>
             <li>
               <router-link to="/aktualnosci">Aktualności</router-link>
@@ -75,6 +75,7 @@ h1 {
 }
 
 .hamburgerToOpen {
+  cursor: pointer;
   border: none;
   display: block;
   height: 60px;
@@ -115,6 +116,7 @@ h1 {
   padding: 30px;
   transition: transform 0.5s ease-in-out;
   transform: translateX(100%);
+  z-index: 99;
 }
 
 .navBoxInner.active {
@@ -122,6 +124,7 @@ h1 {
 }
 
 .hamburgerToClose {
+  cursor: pointer;
   border: none;
   display: block;
   background: none;
@@ -176,7 +179,7 @@ a {
   font-weight: 700;
 }
 
-.test-active {
+.router-link-active {
   border-bottom: 4px solid white;
 }
 
@@ -209,6 +212,7 @@ a {
   .navbar {
     flex-direction: column;
     padding-right: 50px;
+    justify-content: flex-start;
   }
 }
 
@@ -221,9 +225,7 @@ a {
       transform: translateX(2px);
     }
   }
-}
 
-@media (min-width: 1300px) {
   h1 {
     font-size: 100px;
 
@@ -243,6 +245,17 @@ a {
 
   a {
     font-size: 28px;
+  }
+}
+
+@media (min-width: 1620px) {
+  h1 {
+    font-size: 120px;
+
+    span {
+      font-size: 70px;
+      transform: translateX(18px) translateY(-8px);
+    }
   }
 }
 </style>

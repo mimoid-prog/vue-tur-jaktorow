@@ -4,7 +4,7 @@
       <div class="container">
         <div class="main-layout-inner">
           <Navbar />
-          <div class="xd"></div>
+          <router-view></router-view>
         </div>
       </div>
     </div>
@@ -33,6 +33,7 @@ export default {
 
 body {
   font-family: 'Jost', sans-serif;
+  font-size: 18px;
 }
 
 .main-layout {
@@ -57,10 +58,6 @@ body {
 @media (min-width: 850px) {
   .main-layout-inner {
     display: flex;
-  }
-
-  .xd {
-    margin-top: 0px;
   }
 }
 
