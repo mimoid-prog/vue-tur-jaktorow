@@ -2,17 +2,30 @@
   <div class="home">
     <div class="year">
       <p>Wybierz rocznik:</p>
-      <v-select v-model="selected" :options="options" :searchable="false" :clearable="false">
+      <v-select
+        v-model="selected"
+        :options="options"
+        :searchable="false"
+        :clearable="false"
+      >
         <div slot="no-options">Nie ma takiej opcji</div>
       </v-select>
     </div>
     <div class="grid">
-      <Match class="gridLastMatch" :title="'Ostatni mecz - 24.05.2020'" :score="'2 : 1'" />
+      <Match
+        class="gridLastMatch"
+        :title="'Ostatni mecz - 24.05.2020'"
+        :score="'2 : 1'"
+        :enemy="'LKS Chlebnia'"
+        :logo="'chlebnia.jpg'"
+      />
       <Match
         class="gridNextMatch"
         :title="'Następny mecz - 31.05.2020'"
         :score="'wkrótce'"
         :soon="true"
+        :enemy="'Promyk Nowa Sucha'"
+        :logo="'promyk.jpg'"
       />
       <Vote class="gridVote" />
       <Scoreboard class="gridScoreboard" />
@@ -21,17 +34,17 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import vSelect from 'vue-select';
-import 'vue-select/dist/vue-select.css';
-import Match from '@/components/Home/Match.vue';
-import Vote from '@/components/Home/Vote.vue';
-import Scoreboard from '@/components/Home/Scoreboard.vue';
+import Vue from "vue";
+import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
+import Match from "@/components/Home/Match.vue";
+import Vote from "@/components/Home/Vote.vue";
+import Scoreboard from "@/components/Home/Scoreboard.vue";
 
-Vue.component('v-select', vSelect);
+Vue.component("v-select", vSelect);
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     Match,
     Vote,
@@ -39,12 +52,12 @@ export default {
   },
   data: function() {
     return {
-      selected: { label: 'Seniorzy', code: 0 },
+      selected: { label: "Seniorzy", code: 0 },
       options: [
-        { label: 'Seniorzy', code: 0 },
-        { label: '2003/2004', code: 1 },
-        { label: '2005/2006', code: 2 },
-        { label: '2007/2008', code: 3 },
+        { label: "Seniorzy", code: 0 },
+        { label: "2003/2004", code: 1 },
+        { label: "2005/2006", code: 2 },
+        { label: "2007/2008", code: 3 },
       ],
     };
   },
@@ -70,7 +83,6 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  padding: 30px 0;
   width: 100%;
 }
 
@@ -78,12 +90,6 @@ export default {
   display: grid;
   grid-gap: 12px 0;
   margin-top: 12px;
-}
-
-@media (min-width: 850px) {
-  .home {
-    padding: 0;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -96,7 +102,8 @@ export default {
 
   .gridScoreboard {
     grid-column: 1 / 2;
-    grid-row: 1 / 4;
+    grid-row: 1 / 3;
+    background: white;
   }
 
   .gridLastMatch {

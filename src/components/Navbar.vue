@@ -46,11 +46,16 @@
 
 <script>
 export default {
-  name: 'Navbar',
+  name: "Navbar",
   data: function() {
     return {
       active: false,
     };
+  },
+  watch: {
+    $route() {
+      this.active = false;
+    },
   },
 };
 </script>
@@ -90,7 +95,7 @@ h1 {
 
     &:before,
     &:after {
-      content: '';
+      content: "";
       display: block;
       width: 42px;
       height: 6px;

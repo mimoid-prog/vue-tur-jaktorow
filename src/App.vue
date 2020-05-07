@@ -4,7 +4,9 @@
       <div class="container">
         <div class="main-layout-inner">
           <Navbar />
-          <router-view></router-view>
+          <div class="view">
+            <router-view></router-view>
+          </div>
         </div>
       </div>
     </div>
@@ -12,10 +14,10 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue';
+import Navbar from "@/components/Navbar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Navbar,
   },
@@ -23,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -32,7 +34,7 @@ export default {
 }
 
 body {
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 18px;
 }
 
@@ -48,11 +50,8 @@ body {
   padding: 30px 0;
 }
 
-.xd {
-  width: 100%;
-  height: 300px;
-  margin-top: 30px;
-  background: white;
+.secondary-title {
+  font-size: 32px;
 }
 
 @media (min-width: 850px) {
@@ -61,9 +60,28 @@ body {
   }
 }
 
+@media (min-width: 1024px) {
+  .secondary-title {
+    font-size: 40px;
+  }
+}
+
 @media (min-width: 1300px) {
   .container {
     width: 85%;
+  }
+}
+</style>
+
+<style lang="scss" scoped>
+.view {
+  padding: 30px 0;
+  width: 100%;
+}
+
+@media (min-width: 850px) {
+  .view {
+    padding: 0;
   }
 }
 </style>

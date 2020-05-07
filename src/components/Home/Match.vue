@@ -6,9 +6,9 @@
         <div>
           <img src="../../assets/images/logos/tur.jpg" alt="Tur Jaktorów" />
           <div :class="['score', { soon }]">{{ score }}</div>
-          <img src="../../assets/images/logos/chlebnia.jpg" alt="Drużyna przeciwna" />
+          <img :src="require(`@/assets/images/logos/${logo}`)" alt="Drużyna przeciwna" />
         </div>
-        <p class="teamNames">LKS Tur Jaktorów - LKS Chlebnia</p>
+        <p class="teamNames">LKS Tur Jaktorów - {{ enemy }}</p>
       </div>
     </template>
   </Item>
@@ -30,6 +30,14 @@ export default {
     soon: {
       type: Boolean,
       default: false,
+    },
+    enemy: {
+      type: String,
+      required: true,
+    },
+    logo: {
+      type: String,
+      required: true,
     },
   },
   components: {

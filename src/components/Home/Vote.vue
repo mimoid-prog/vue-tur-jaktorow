@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'Vote',
+  name: "Vote",
 };
 </script>
 
@@ -38,9 +38,16 @@ export default {
     font-size: 16px;
     width: 42%;
     padding: 8px 0;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+    font-family: Jost;
 
     &:first-child {
       margin-right: 8px;
+    }
+
+    &:hover {
+      background-color: #fffab0;
     }
   }
 }
