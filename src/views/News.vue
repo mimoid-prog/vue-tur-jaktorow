@@ -1,6 +1,6 @@
 <template>
   <div id="news" class="news">
-    <h2 class="secondary-title">Aktualności</h2>
+    <h2 class="secondaryTitle">Aktualności</h2>
     <div class="posts">
       <div class="post" v-for="(item, index) in getPosts()" :key="index">
         <Item>
@@ -17,22 +17,20 @@
         :class="['page', { currentPage: page === index + 1 }]"
         href="#app"
         v-smooth-scroll
-      >
-        {{ index + 1 }}
-      </a>
+      >{{ index + 1 }}</a>
     </div>
   </div>
 </template>
 
 <script>
-import Vue from "vue";
-import Item from "@/components/Item.vue";
-import vueSmoothScroll from "vue2-smooth-scroll";
+import Vue from 'vue';
+import Item from '@/components/Item.vue';
+import vueSmoothScroll from 'vue2-smooth-scroll';
 
 Vue.use(vueSmoothScroll);
 
 export default {
-  name: "News",
+  name: 'News',
   components: {
     Item,
   },
@@ -41,64 +39,64 @@ export default {
       page: 1,
       posts: [
         {
-          title: "Małe podsumowanie sezonu!1",
-          date: "12.04.2019",
+          title: 'Tytuł 1',
+          date: '12.04.2019',
           content:
-            "Sezon 2013/2014 nasz zespół skończył na ósmej lokacie w swojej lidze. Wynik ten można uznać za mały sukces ponieważ to był pierwszy sezon tego rocznika. W naszym zespole większość chłopców była z rocznika 2001 ale młodsi zawodnicy dorównywali swoim starszym kolegą. Małe podsumowanie sezonu w rozwinięciu (klikamy czytano)... W rozwinięciu również dostępne są zdjęcia z zakończenia sezonu.",
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a nulla accumsan, auctor purus quis, fermentum est. Nunc sed accumsan eros. Maecenas ullamcorper nulla non ex efficitur, a hendrerit turpis vulputate. Curabitur vel erat velit. Fusce scelerisque lorem et risus ornare, euismod bibendum sapien euismod.',
         },
         {
-          title: "Minimalna przegrana z Ożarowianką!2",
-          date: "12.04.2019",
+          title: 'Tytuł 2',
+          date: '12.04.2019',
           content:
-            "W ostatniej kolejce ligowej nasi zawodnicy minimalnie ulegli zespołowi Ożarowianki Ożarów. Mecz zakończył się wynikiem 3-4 (2-1). Cieszy to że z zespołem o dużo razy lepszym od nas walczyliśmy jak równy z równym co można uznać za mały sukces. Zabrakło zimnej krwi w obronie i skuteczności w sytuacjach podbramkowych. Zespół przyjezdnych grał do końca i w ostatnich minutach wpakował naszym trzy bramki. Cała relacja w rozwinięciu newsa (klikamy czytano)... ",
+            'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse id nibh id diam sodales pretium nec in sapien. Maecenas placerat sem vitae felis consequat ultrices. Etiam libero lacus, condimentum at justo in, porttitor ultrices orci. Integer diam mauris, suscipit eu augue ac, ullamcorper tempus lorem. Phasellus porttitor arcu non consequat cursus. Aenean iaculis pretium augue, in vestibulum elit consectetur ac. Ut non neque id nunc iaculis euismod. Aenean viverra enim turpis, vel laoreet urna molestie in.',
         },
         {
-          title: "Małe podsumowanie sezonu!3",
-          date: "12.04.2019",
+          title: 'Tytuł 3',
+          date: '12.04.2019',
           content:
-            "Sezon 2013/2014 nasz zespół skończył na ósmej lokacie w swojej lidze. Wynik ten można uznać za mały sukces ponieważ to był pierwszy sezon tego rocznika. W naszym zespole większość chłopców była z rocznika 2001 ale młodsi zawodnicy dorównywali swoim starszym kolegą. Małe podsumowanie sezonu w rozwinięciu (klikamy czytano)... W rozwinięciu również dostępne są zdjęcia z zakończenia sezonu.",
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a nulla accumsan, auctor purus quis, fermentum est. Nunc sed accumsan eros. Maecenas ullamcorper nulla non ex efficitur, a hendrerit turpis vulputate. Curabitur vel erat velit. Fusce scelerisque lorem et risus ornare, euismod bibendum sapien euismod.',
         },
         {
-          title: "Małe podsumowanie sezonu!4",
-          date: "12.04.2019",
+          title: 'Tytuł 4',
+          date: '12.04.2019',
           content:
-            "Sezon 2013/2014 nasz zespół skończył na ósmej lokacie w swojej lidze. Wynik ten można uznać za mały sukces ponieważ to był pierwszy sezon tego rocznika. W naszym zespole większość chłopców była z rocznika 2001 ale młodsi zawodnicy dorównywali swoim starszym kolegą. Małe podsumowanie sezonu w rozwinięciu (klikamy czytano)... W rozwinięciu również dostępne są zdjęcia z zakończenia sezonu.",
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a nulla accumsan, auctor purus quis, fermentum est. Nunc sed accumsan eros. Maecenas ullamcorper nulla non ex efficitur, a hendrerit turpis vulputate. Curabitur vel erat velit. Fusce scelerisque lorem et risus ornare, euismod bibendum sapien euismod.',
         },
         {
-          title: "Małe podsumowanie sezonu!5",
-          date: "12.04.2019",
+          title: 'Tytuł 5',
+          date: '12.04.2019',
           content:
-            "Sezon 2013/2014 nasz zespół skończył na ósmej lokacie w swojej lidze. Wynik ten można uznać za mały sukces ponieważ to był pierwszy sezon tego rocznika. W naszym zespole większość chłopców była z rocznika 2001 ale młodsi zawodnicy dorównywali swoim starszym kolegą. Małe podsumowanie sezonu w rozwinięciu (klikamy czytano)... W rozwinięciu również dostępne są zdjęcia z zakończenia sezonu.",
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a nulla accumsan, auctor purus quis, fermentum est. Nunc sed accumsan eros. Maecenas ullamcorper nulla non ex efficitur, a hendrerit turpis vulputate. Curabitur vel erat velit. Fusce scelerisque lorem et risus ornare, euismod bibendum sapien euismod.',
         },
         {
-          title: "Małe podsumowanie sezonu!6",
-          date: "12.04.2019",
+          title: 'Tytuł 6',
+          date: '12.04.2019',
           content:
-            "Sezon 2013/2014 nasz zespół skończył na ósmej lokacie w swojej lidze. Wynik ten można uznać za mały sukces ponieważ to był pierwszy sezon tego rocznika. W naszym zespole większość chłopców była z rocznika 2001 ale młodsi zawodnicy dorównywali swoim starszym kolegą. Małe podsumowanie sezonu w rozwinięciu (klikamy czytano)... W rozwinięciu również dostępne są zdjęcia z zakończenia sezonu.",
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a nulla accumsan, auctor purus quis, fermentum est. Nunc sed accumsan eros. Maecenas ullamcorper nulla non ex efficitur, a hendrerit turpis vulputate. Curabitur vel erat velit. Fusce scelerisque lorem et risus ornare, euismod bibendum sapien euismod.',
         },
         {
-          title: "Małe podsumowanie sezonu!7",
-          date: "12.04.2019",
+          title: 'Tytuł 7',
+          date: '12.04.2019',
           content:
-            "Sezon 2013/2014 nasz zespół skończył na ósmej lokacie w swojej lidze. Wynik ten można uznać za mały sukces ponieważ to był pierwszy sezon tego rocznika. W naszym zespole większość chłopców była z rocznika 2001 ale młodsi zawodnicy dorównywali swoim starszym kolegą. Małe podsumowanie sezonu w rozwinięciu (klikamy czytano)... W rozwinięciu również dostępne są zdjęcia z zakończenia sezonu.",
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a nulla accumsan, auctor purus quis, fermentum est. Nunc sed accumsan eros. Maecenas ullamcorper nulla non ex efficitur, a hendrerit turpis vulputate. Curabitur vel erat velit. Fusce scelerisque lorem et risus ornare, euismod bibendum sapien euismod.',
         },
         {
-          title: "Małe podsumowanie sezonu!8",
-          date: "12.04.2019",
+          title: 'Tytuł 8',
+          date: '12.04.2019',
           content:
-            "Sezon 2013/2014 nasz zespół skończył na ósmej lokacie w swojej lidze. Wynik ten można uznać za mały sukces ponieważ to był pierwszy sezon tego rocznika. W naszym zespole większość chłopców była z rocznika 2001 ale młodsi zawodnicy dorównywali swoim starszym kolegą. Małe podsumowanie sezonu w rozwinięciu (klikamy czytano)... W rozwinięciu również dostępne są zdjęcia z zakończenia sezonu.",
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a nulla accumsan, auctor purus quis, fermentum est. Nunc sed accumsan eros. Maecenas ullamcorper nulla non ex efficitur, a hendrerit turpis vulputate. Curabitur vel erat velit. Fusce scelerisque lorem et risus ornare, euismod bibendum sapien euismod.',
         },
         {
-          title: "Małe podsumowanie sezonu!9",
-          date: "12.04.2019",
+          title: 'Tytuł 9',
+          date: '12.04.2019',
           content:
-            "Sezon 2013/2014 nasz zespół skończył na ósmej lokacie w swojej lidze. Wynik ten można uznać za mały sukces ponieważ to był pierwszy sezon tego rocznika. W naszym zespole większość chłopców była z rocznika 2001 ale młodsi zawodnicy dorównywali swoim starszym kolegą. Małe podsumowanie sezonu w rozwinięciu (klikamy czytano)... W rozwinięciu również dostępne są zdjęcia z zakończenia sezonu.",
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a nulla accumsan, auctor purus quis, fermentum est. Nunc sed accumsan eros. Maecenas ullamcorper nulla non ex efficitur, a hendrerit turpis vulputate. Curabitur vel erat velit. Fusce scelerisque lorem et risus ornare, euismod bibendum sapien euismod.',
         },
         {
-          title: "Małe podsumowanie sezonu!10",
-          date: "12.04.2019",
+          title: 'Tytuł 10',
+          date: '12.04.2019',
           content:
-            "Sezon 2013/2014 nasz zespół skończył na ósmej lokacie w swojej lidze. Wynik ten można uznać za mały sukces ponieważ to był pierwszy sezon tego rocznika. W naszym zespole większość chłopców była z rocznika 2001 ale młodsi zawodnicy dorównywali swoim starszym kolegą. Małe podsumowanie sezonu w rozwinięciu (klikamy czytano)... W rozwinięciu również dostępne są zdjęcia z zakończenia sezonu.",
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a nulla accumsan, auctor purus quis, fermentum est. Nunc sed accumsan eros. Maecenas ullamcorper nulla non ex efficitur, a hendrerit turpis vulputate. Curabitur vel erat velit. Fusce scelerisque lorem et risus ornare, euismod bibendum sapien euismod.',
         },
       ],
     };

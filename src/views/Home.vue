@@ -2,12 +2,7 @@
   <div class="home">
     <div class="year">
       <p>Wybierz rocznik:</p>
-      <v-select
-        v-model="selected"
-        :options="options"
-        :searchable="false"
-        :clearable="false"
-      >
+      <v-select v-model="selected" :options="options" :searchable="false" :clearable="false">
         <div slot="no-options">Nie ma takiej opcji</div>
       </v-select>
     </div>
@@ -34,17 +29,17 @@
 </template>
 
 <script>
-import Vue from "vue";
-import vSelect from "vue-select";
-import "vue-select/dist/vue-select.css";
-import Match from "@/components/Home/Match.vue";
-import Vote from "@/components/Home/Vote.vue";
-import Scoreboard from "@/components/Home/Scoreboard.vue";
+import Vue from 'vue';
+import vSelect from 'vue-select';
+import 'vue-select/dist/vue-select.css';
+import Match from '@/components/Home/Match.vue';
+import Vote from '@/components/Home/Vote.vue';
+import Scoreboard from '@/components/Home/Scoreboard.vue';
 
-Vue.component("v-select", vSelect);
+Vue.component('v-select', vSelect);
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     Match,
     Vote,
@@ -52,12 +47,12 @@ export default {
   },
   data: function() {
     return {
-      selected: { label: "Seniorzy", code: 0 },
+      selected: { label: 'Seniorzy', code: 0 },
       options: [
-        { label: "Seniorzy", code: 0 },
-        { label: "2003/2004", code: 1 },
-        { label: "2005/2006", code: 2 },
-        { label: "2007/2008", code: 3 },
+        { label: 'Seniorzy', code: 0 },
+        { label: '2003/2004', code: 1 },
+        { label: '2005/2006', code: 2 },
+        { label: '2007/2008', code: 3 },
       ],
     };
   },

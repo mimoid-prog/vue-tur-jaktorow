@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <div class="main-layout">
+    <div class="mainLayout">
       <div class="container">
-        <div class="main-layout-inner">
+        <div class="mainLayoutInner">
           <Navbar />
           <div class="view">
-            <router-view></router-view>
+            <transition name="viewAnimation" mode="out-in">
+              <router-view></router-view>
+            </transition>
           </div>
         </div>
       </div>
@@ -14,10 +16,10 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
+import Navbar from '@/components/Navbar.vue';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Navbar,
   },
@@ -25,7 +27,11 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
+html {
+  overflow-y: scroll;
+}
 
 * {
   box-sizing: border-box;
@@ -34,11 +40,11 @@ export default {
 }
 
 body {
-  font-family: "Jost", sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 18px;
 }
 
-.main-layout {
+.mainLayout {
   background: #ae0505;
   width: 100%;
   min-height: 100vh;
@@ -50,18 +56,18 @@ body {
   padding: 30px 0;
 }
 
-.secondary-title {
+.secondaryTitle {
   font-size: 32px;
 }
 
 @media (min-width: 850px) {
-  .main-layout-inner {
+  .mainLayoutInner {
     display: flex;
   }
 }
 
 @media (min-width: 1024px) {
-  .secondary-title {
+  .secondaryTitle {
     font-size: 40px;
   }
 }
@@ -79,9 +85,43 @@ body {
   width: 100%;
 }
 
+.viewAnimation-enter-active {
+  transition: transform 0.3s ease-out, opacity 0.3s ease;
+}
+
+.viewAnimation-leave-active {
+  transition: transform 0.5s ease-out, opacity 0.5s ease;
+}
+
+.viewAnimation-enter {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.viewAnimation-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
 @media (min-width: 850px) {
   .view {
     padding: 0;
+  }
+
+  .viewAnimation-enter-active {
+    transition: transform 0.8s ease-out, opacity 0.8s ease;
+  }
+
+  .viewAnimation-leave-active {
+    transition: transform 0.6s ease-out, opacity 0.6s ease-in;
+  }
+
+  .viewAnimation-enter {
+    transform: translateY(-100vh);
+  }
+
+  .viewAnimation-leave-to {
+    transform: translateY(50vh);
   }
 }
 </style>
