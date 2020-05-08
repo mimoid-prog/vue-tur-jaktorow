@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h2 class="secondaryTitle">O klubie</h2>
+    <h2 class="secondaryTitle viewTitle">O klubie</h2>
     <div class="content">
       <p>Klub piłkarski Tur Jaktorów powstał w roku 2003. Od tej pory vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse id nibh id diam sodales pretium nec in sapien. Maecenas placerat sem vitae felis consequat ultrices. Etiam libero lacus, condimentum at justo in, porttitor ultrices orci. Integer diam mauris, suscipit eu augue ac, ullamcorper tempus lorem. Phasellus porttitor arcu non consequat cursus. Aenean iaculis pretium augue, in vestibulum elit consectetur ac. Ut non neque id nunc iaculis euismod. Aenean viverra enim turpis, vel laoreet urna molestie in.</p>
       <div class="image" />
@@ -20,14 +20,8 @@ export default {
   width: 100%;
 }
 
-h2 {
-  color: white;
-  text-align: center;
-}
-
 .content {
   background: white;
-  margin-top: 20px;
   padding: 20px;
 }
 

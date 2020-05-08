@@ -60,6 +60,12 @@ body {
   font-size: 32px;
 }
 
+.viewTitle {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 @media (min-width: 850px) {
   .mainLayoutInner {
     display: flex;

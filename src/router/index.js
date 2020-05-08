@@ -24,6 +24,11 @@ const routes = [
     name: "About",
     component: () => import("../views/About.vue"),
   },
+  {
+    path: "/galeria",
+    name: "Gallery",
+    component: () => import("../views/Gallery.vue"),
+  },
 ];
 
 const router = new VueRouter({

@@ -1,6 +1,6 @@
 <template>
   <div id="news" class="news">
-    <h2 class="secondaryTitle">Aktualności</h2>
+    <h2 class="secondaryTitle viewTitle">Aktualności</h2>
     <div class="posts">
       <div class="post" v-for="(item, index) in getPosts()" :key="index">
         <Item>
@@ -117,15 +117,6 @@ export default {
 <style lang="scss" scoped>
 .news {
   width: 100%;
-}
-
-h2 {
-  color: white;
-  text-align: center;
-}
-
-.posts {
-  margin-top: 20px;
 }
 
 .post {
