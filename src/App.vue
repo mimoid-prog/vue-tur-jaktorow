@@ -9,6 +9,11 @@
               <router-view></router-view>
             </transition>
           </div>
+          <transition name="showPageUp">
+            <a href="#app" class="pageUp" v-smooth-scroll v-if="showPageUp">
+              <PageUpSVG />
+            </a>
+          </transition>
         </div>
       </div>
     </div>
@@ -16,12 +21,36 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import Navbar from '@/components/Navbar.vue';
+import PageUpSVG from '@/components/PageUpSVG.vue';
+import vueSmoothScroll from 'vue2-smooth-scroll';
+
+Vue.use(vueSmoothScroll);
 
 export default {
   name: 'App',
   components: {
     Navbar,
+    PageUpSVG,
+  },
+  data: function() {
+    return {
+      showPageUp: false,
+    };
+  },
+  created: function() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed: function() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll: function() {
+      if (window.innerHeight / 2 < document.documentElement.scrollTop)
+        this.showPageUp = true;
+      else this.showPageUp = false;
+    },
   },
 };
 </script>
@@ -44,12 +73,6 @@ body {
   font-size: 18px;
 }
 
-.mainLayout {
-  background: #ae0505;
-  width: 100%;
-  min-height: 100vh;
-}
-
 .container {
   width: 85%;
   margin: 0 auto;
@@ -66,9 +89,44 @@ body {
   margin-bottom: 20px;
 }
 
+.pageUp {
+  position: fixed;
+  display: block;
+  width: 50px;
+  height: 50px;
+  bottom: 30px;
+  right: 20px;
+
+  .bgArrow {
+    fill: #000;
+  }
+
+  .arrow {
+    fill: #fff;
+  }
+}
+
+.showPageUp-enter-active,
+.showPageUp-leave-active {
+  transition: opacity 0.5s, transform 0.5s;
+}
+.showPageUp-enter,
+.showPageUp-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
 @media (min-width: 850px) {
-  .mainLayoutInner {
-    display: flex;
+  .pageUp {
+    right: auto;
+
+    .bgArrow {
+      fill: #fff;
+    }
+
+    .arrow {
+      fill: #ae0505;
+    }
   }
 }
 
@@ -86,6 +144,16 @@ body {
 </style>
 
 <style lang="scss" scoped>
+.mainLayout {
+  background: #ae0505;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.mainLayoutInner {
+  position: relative;
+}
+
 .view {
   padding: 30px 0;
   width: 100%;
@@ -110,6 +178,10 @@ body {
 }
 
 @media (min-width: 850px) {
+  .mainLayoutInner {
+    display: flex;
+  }
+
   .view {
     padding: 0;
   }

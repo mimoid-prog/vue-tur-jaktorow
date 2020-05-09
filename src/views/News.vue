@@ -23,11 +23,7 @@
 </template>
 
 <script>
-import Vue from 'vue';
 import Item from '@/components/Item.vue';
-import vueSmoothScroll from 'vue2-smooth-scroll';
-
-Vue.use(vueSmoothScroll);
 
 export default {
   name: 'News',
