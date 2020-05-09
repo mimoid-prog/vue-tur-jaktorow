@@ -29,6 +29,11 @@ const routes = [
     name: "Gallery",
     component: () => import("../views/Gallery.vue"),
   },
+  {
+    path: "/terminarz",
+    name: "Schedule",
+    component: () => import("../views/Schedule.vue"),
+  },
 ];
 
 const router = new VueRouter({
