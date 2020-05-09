@@ -1,7 +1,7 @@
 <template>
   <div class="schedule">
     <h2 class="secondaryTitle viewTitle">Terminarz (seniorzy)</h2>
-    <h3>Terminarz ulegnie zmienie ze względu na sytuację spowodowaną koronawirusem</h3>
+    <h3>Terminarz ulegnie zmianie ze względu na sytuację spowodowaną koronawirusem</h3>
     <div class="content">
       <div v-for="(itemB, indexB) in schedule" :key="indexB" class="box">
         <div class="date">

@@ -183,6 +183,15 @@ a {
   font-size: 22px;
   font-weight: 700;
   display: inline-block;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    background: white;
+    transition: width 0.3s;
+  }
 }
 
 .router-link-active:after {
@@ -232,21 +241,6 @@ a {
     transition: transform 0.2s ease;
   }
 
-  a {
-    &:after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 4px;
-      background: white;
-      transition: width 0.3s;
-    }
-
-    &:hover:after {
-      width: 100%;
-    }
-  }
-
   h1 {
     font-size: 100px;
 
@@ -266,6 +260,10 @@ a {
 
   a {
     font-size: 28px;
+
+    &:hover:after {
+      width: 100%;
+    }
   }
 }
 
