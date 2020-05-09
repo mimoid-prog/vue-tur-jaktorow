@@ -4,11 +4,11 @@
     <template v-slot:content>
       <div class="match">
         <div>
-          <img src="../../assets/images/logos/tur.jpg" alt="Tur Jaktorów" />
+          <img :src="require(`@/assets/images/logos/${leftLogo}`)" :alt="leftTeam" />
           <div :class="['score', { soon }]">{{ score }}</div>
-          <img :src="require(`@/assets/images/logos/${logo}`)" alt="Drużyna przeciwna" />
+          <img :src="require(`@/assets/images/logos/${rightLogo}`)" :alt="rightTeam" />
         </div>
-        <p class="teamNames">LKS Tur Jaktorów - {{ enemy }}</p>
+        <p class="teamNames">{{ leftTeam }} - {{ rightTeam }}</p>
       </div>
     </template>
   </Item>
@@ -18,28 +18,15 @@
 import Item from '@/components/Item.vue';
 export default {
   name: 'Match',
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    score: {
-      type: String,
-      required: true,
-    },
-    soon: {
-      type: Boolean,
-      default: false,
-    },
-    enemy: {
-      type: String,
-      required: true,
-    },
-    logo: {
-      type: String,
-      required: true,
-    },
-  },
+  props: [
+    'title',
+    'score',
+    'soon',
+    'leftTeam',
+    'leftLogo',
+    'rightTeam',
+    'rightLogo',
+  ],
   components: {
     Item,
   },

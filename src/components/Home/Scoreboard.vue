@@ -35,39 +35,74 @@ export default {
     return {
       teams: [
         {
-          stats: [8, 10, 0],
-          club: 'UMKS Piaseczno',
-          logo: 'piaseczno.jpg',
+          stats: [10, 1, 2],
+          club: 'Passovia Pass',
+          logo: 'passovia.jpg',
         },
         {
-          stats: [7, 4, 4],
-          club: 'LKS Chlebnia',
-          logo: 'chlebnia.jpg',
+          stats: [9, 1, 3],
+          club: 'Naprzód Brwinów',
+          logo: 'naprzod.jpg',
         },
         {
-          stats: [6, 0, 2],
+          stats: [8, 2, 3],
+          club: 'Wrzos Międzyborów',
+          logo: 'wrzos.jpg',
+        },
+        {
+          stats: [8, 2, 3],
+          club: 'Partyzant Leszno',
+          logo: 'partyzant.jpg',
+        },
+        {
+          stats: [7, 2, 4],
+          club: 'Józefowianka Józefów',
+          logo: 'jozefow.jpg',
+        },
+        {
+          stats: [7, 0, 6],
+          club: 'Zaborowianka Zaborów',
+          logo: 'zaborow.jpg',
+        },
+        {
+          stats: [7, 0, 6],
           club: 'Promyk Nowa Sucha',
           logo: 'promyk.jpg',
         },
         {
-          stats: [5, 2, 4],
-          club: 'MKS Piast Piastów',
-          logo: 'piast.jpg',
+          stats: [6, 1, 6],
+          club: 'Tajfun Brochów',
+          logo: 'tajfun.jpg',
         },
         {
-          stats: [4, 0, 0],
+          stats: [5, 2, 6],
+          club: 'Błękitni Korytów	',
+          logo: 'blekitni.jpg',
+        },
+        {
+          stats: [4, 3, 6],
+          club: 'LKS Osuchów',
+          logo: 'osuchow.jpg',
+        },
+        {
+          stats: [3, 3, 7],
+          club: 'Piast Feliksów',
+          logo: 'feliksow.jpg',
+        },
+        {
+          stats: [3, 3, 7],
+          club: 'LKS II Chlebnia',
+          logo: 'chlebnia.jpg',
+        },
+        {
+          stats: [2, 1, 10],
+          club: 'Orzeł Kampinos',
+          logo: 'orzel.jpg',
+        },
+        {
+          stats: [0, 3, 10],
           club: 'Tur Jaktorów',
           logo: 'tur.jpg',
-        },
-        {
-          stats: [3, 2, 0],
-          club: 'KS Błonianka',
-          logo: 'blonianka.jpg',
-        },
-        {
-          stats: [2, 6, 0],
-          club: 'KS Teresin',
-          logo: 'teresin.jpg',
         },
       ],
     };
@@ -119,15 +154,16 @@ img {
 }
 
 .club {
-  width: 56%;
+  width: 59%;
 }
 
 .stats {
-  width: 28%;
+  width: 25%;
 }
 
 .points {
   width: 8%;
+  text-align: center;
 }
 
 @media (min-width: 640px) {
@@ -142,7 +178,7 @@ img {
 
   img {
     display: block;
-    width: 40px;
+    width: 30px;
     margin-right: 8px;
   }
 }
@@ -153,7 +189,7 @@ img {
   }
 
   .place {
-    width: auto;
+    width: 26px;
     margin-right: 8px;
   }
 

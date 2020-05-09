@@ -9,20 +9,25 @@
     <div class="grid">
       <Match
         class="gridLastMatch"
-        :title="'Ostatni mecz - 24.05.2020'"
-        :score="'2 : 1'"
-        :enemy="'LKS Chlebnia'"
-        :logo="'chlebnia.jpg'"
+        :title="'Ostatni mecz - 09.11.2019'"
+        :score="'5 : 2'"
+        :soon="false"
+        :leftTeam="'Passovia Pass'"
+        :leftLogo="'passovia.jpg'"
+        :rightTeam="'Tur Jaktorów'"
+        :rightLogo="'tur.jpg'"
       />
       <Match
         class="gridNextMatch"
-        :title="'Następny mecz - 31.05.2020'"
+        :title="'Następny mecz - 22.03.2020'"
         :score="'wkrótce'"
         :soon="true"
-        :enemy="'Promyk Nowa Sucha'"
-        :logo="'promyk.jpg'"
+        :leftTeam="'Partyzant Leszno'"
+        :leftLogo="'partyzant.jpg'"
+        :rightTeam="'Tur Jaktorów'"
+        :rightLogo="'tur.jpg'"
       />
-      <Vote class="gridVote" />
+      <Banner class="gridBanner" />
       <Scoreboard class="gridScoreboard" />
     </div>
   </div>
@@ -33,7 +38,7 @@ import Vue from 'vue';
 import vSelect from 'vue-select';
 import 'vue-select/dist/vue-select.css';
 import Match from '@/components/Home/Match.vue';
-import Vote from '@/components/Home/Vote.vue';
+import Banner from '@/components/Home/Banner.vue';
 import Scoreboard from '@/components/Home/Scoreboard.vue';
 
 Vue.component('v-select', vSelect);
@@ -42,18 +47,13 @@ export default {
   name: 'Home',
   components: {
     Match,
-    Vote,
+    Banner,
     Scoreboard,
   },
   data: function() {
     return {
       selected: { label: 'Seniorzy', code: 0 },
-      options: [
-        { label: 'Seniorzy', code: 0 },
-        { label: '2003/2004', code: 1 },
-        { label: '2005/2006', code: 2 },
-        { label: '2007/2008', code: 3 },
-      ],
+      options: [{ label: 'Seniorzy', code: 0 }],
     };
   },
 };
@@ -97,7 +97,7 @@ export default {
 
   .gridScoreboard {
     grid-column: 1 / 2;
-    grid-row: 1 / 3;
+    grid-row: 1 / 4;
     background: white;
   }
 
@@ -111,7 +111,7 @@ export default {
     grid-row: 2 / 3;
   }
 
-  .gridVote {
+  .gridBanner {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
   }
