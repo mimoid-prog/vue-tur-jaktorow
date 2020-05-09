@@ -46,7 +46,7 @@
 
 <script>
 export default {
-  name: "Navbar",
+  name: 'Navbar',
   data: function() {
     return {
       active: false,
@@ -95,7 +95,7 @@ h1 {
 
     &:before,
     &:after {
-      content: "";
+      content: '';
       display: block;
       width: 42px;
       height: 6px;
@@ -186,7 +186,7 @@ a {
 }
 
 .router-link-active:after {
-  content: "";
+  content: '';
   display: block;
   width: 100%;
   height: 4px;
@@ -234,7 +234,7 @@ a {
 
   a {
     &:after {
-      content: "";
+      content: '';
       display: block;
       width: 0;
       height: 4px;

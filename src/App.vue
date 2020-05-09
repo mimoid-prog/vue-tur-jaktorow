@@ -10,7 +10,12 @@
             </transition>
           </div>
           <transition name="showPageUp">
-            <a href="#app" class="pageUp" v-smooth-scroll v-if="showPageUp">
+            <a
+              href="#app"
+              class="pageUp"
+              v-smooth-scroll="{ updateHistory: false }"
+              v-if="showPageUp"
+            >
               <PageUpSVG />
             </a>
           </transition>
@@ -50,6 +55,11 @@ export default {
       if (window.innerHeight / 2 < document.documentElement.scrollTop)
         this.showPageUp = true;
       else this.showPageUp = false;
+    },
+  },
+  watch: {
+    $route() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     },
   },
 };
