@@ -26,15 +26,15 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import Navbar from '@/components/Navbar.vue';
-import PageUpSVG from '@/components/PageUpSVG.vue';
-import vueSmoothScroll from 'vue2-smooth-scroll';
+import Vue from "vue";
+import Navbar from "@/components/Navbar.vue";
+import PageUpSVG from "@/components/PageUpSVG.vue";
+import vueSmoothScroll from "vue2-smooth-scroll";
 
 Vue.use(vueSmoothScroll);
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Navbar,
     PageUpSVG,
@@ -45,10 +45,10 @@ export default {
     };
   },
   created: function() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
   },
   destroyed: function() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
     handleScroll: function() {
@@ -59,17 +59,47 @@ export default {
   },
   watch: {
     $route() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     },
   },
 };
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 400;
+  src: url("~@/assets/fonts/Jost-Regular.woff") format("woff2"),
+    url("~@/assets/fonts/Jost-Regular.woff") format("woff"),
+    url("~@/assets/fonts/Jost-Regular.ttf") format("ttf"),
+    url("~@/assets/fonts/Jost-Regular.eot") format("eot");
+}
+
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 500;
+  src: url("~@/assets/fonts/Jost-Medium.woff2") format("woff2"),
+    url("~@/assets/fonts/Jost-Medium.woff") format("woff"),
+    url("~@/assets/fonts/Jost-Medium.ttf") format("ttf"),
+    url("~@/assets/fonts/Jost-Medium.eot") format("eot");
+}
+
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  src: url("~@/assets/fonts/Jost-Bold.woff2") format("woff2"),
+    url("~@/assets/fonts/Jost-Bold.woff") format("woff"),
+    url("~@/assets/fonts/Jost-Bold.ttf") format("ttf"),
+    url("~@/assets/fonts/Jost-Bold.eot") format("eot");
+}
 
 p {
-  font-family: 'Jost' !important;
+  font-family: "Jost" !important;
 }
 
 html {
@@ -83,7 +113,7 @@ html {
 }
 
 body {
-  font-family: 'Jost';
+  font-family: "Jost";
   font-size: 18px;
 }
 
