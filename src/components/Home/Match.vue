@@ -4,9 +4,15 @@
     <template v-slot:content>
       <div class="match">
         <div>
-          <img :src="require(`@/assets/images/logos/${leftLogo}`)" :alt="leftTeam" />
+          <img
+            :src="require(`@/assets/images/logos/${leftLogo}`)"
+            :alt="leftTeam"
+          />
           <div :class="['score', { soon }]">{{ score }}</div>
-          <img :src="require(`@/assets/images/logos/${rightLogo}`)" :alt="rightTeam" />
+          <img
+            :src="require(`@/assets/images/logos/${rightLogo}`)"
+            :alt="rightTeam"
+          />
         </div>
         <p class="teamNames">{{ leftTeam }} - {{ rightTeam }}</p>
       </div>
@@ -15,17 +21,18 @@
 </template>
 
 <script>
-import Item from '@/components/Item.vue';
+import Item from "@/components/Item.vue";
+
 export default {
-  name: 'Match',
+  name: "Match",
   props: [
-    'title',
-    'score',
-    'soon',
-    'leftTeam',
-    'leftLogo',
-    'rightTeam',
-    'rightLogo',
+    "title",
+    "score",
+    "soon",
+    "leftTeam",
+    "leftLogo",
+    "rightTeam",
+    "rightLogo",
   ],
   components: {
     Item,

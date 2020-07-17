@@ -2,13 +2,21 @@
   <div class="home">
     <div class="year">
       <p>Wybierz rocznik:</p>
-      <v-select v-model="selected" :options="options" :searchable="false" :clearable="false">
+      <v-select
+        v-model="selected"
+        :options="options"
+        :searchable="false"
+        :clearable="false"
+        onChange="handleSelectChange"
+      >
         <div slot="no-options">Nie ma takiej opcji</div>
       </v-select>
     </div>
     <div class="grid">
       <Match
         class="gridLastMatch"
+        :firstBox="true"
+        :currentWeek="currentWeek"
         :title="'Ostatni mecz - 09.11.2019'"
         :score="'5 : 2'"
         :soon="false"
@@ -19,6 +27,8 @@
       />
       <Match
         class="gridNextMatch"
+        :firstBox="false"
+        :currentWeek="currentWeek"
         :title="'Następny mecz - 22.03.2020'"
         :score="'wkrótce'"
         :soon="true"
@@ -28,23 +38,26 @@
         :rightLogo="'tur.jpg'"
       />
       <Banner class="gridBanner" />
-      <Scoreboard class="gridScoreboard" />
+      <Scoreboard class="gridScoreboard" :selected="selected" />
     </div>
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
-import vSelect from 'vue-select';
-import 'vue-select/dist/vue-select.css';
-import Match from '@/components/Home/Match.vue';
-import Banner from '@/components/Home/Banner.vue';
-import Scoreboard from '@/components/Home/Scoreboard.vue';
+import Vue from "vue";
+import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
+import Match from "@/components/Home/Match.vue";
+import Banner from "@/components/Home/Banner.vue";
+import Scoreboard from "@/components/Home/Scoreboard.vue";
 
-Vue.component('v-select', vSelect);
+import seniorsCurrentWeek from "@/data/seniors/currentWeek";
+import R2005_2006CurrentWeek from "@/data/R2005_2006/currentWeek";
+
+Vue.component("v-select", vSelect);
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     Match,
     Banner,
@@ -52,9 +65,24 @@ export default {
   },
   data: function() {
     return {
-      selected: { label: 'Seniorzy', code: 0 },
-      options: [{ label: 'Seniorzy', code: 0 }],
+      currentWeek: seniorsCurrentWeek,
+      selected: { label: "Seniorzy", code: 0 },
+      options: [
+        { label: "Seniorzy", code: 0 },
+        { label: "2005/2006", code: 1 },
+      ],
     };
+  },
+  methods: {
+    handleSelectChange: function() {
+      let week;
+      if (this.selected.code === 0) {
+        week = seniorsCurrentWeek;
+      } else if (this.selected.code === 1) {
+        week = R2005_2006CurrentWeek;
+      }
+      console.log("change", week);
+    },
   },
 };
 </script>
